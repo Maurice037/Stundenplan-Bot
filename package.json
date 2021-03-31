@@ -1,0 +1,25 @@
+{
+  "name": "stundenplan-bot",
+  "version": "1.0.0",
+  "description": "Discord Bot für WebUntis",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "webuntis": "^1.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+     "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maurice037/Stundenplan-Bot.git"
+  },
+  "author": "Maurice037",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maurice037/Stundenplan-Bot/issues"
+  },
+  "homepage": "https://github.com/Maurice037/Stundenplan-Bot#readme"
+}
