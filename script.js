@@ -19,7 +19,8 @@ function beginn(time) {
            start: x.startTime,
            end: x.endTime, 
            fach: x.su[0].longname ,
-           raum: x.ro[0].name === "---" 
+           raum: 
+           x.ro[0].name === "---" 
            ? 
            x.ro[0].orgname 
            :
@@ -29,10 +30,23 @@ function beginn(time) {
            ? 
            x.te[0].orgname 
            :
-           x.te[0].name 
+           x.te[0].name,
+           status:
+          x.code === 'cancelled' 
+          ?
+          false
+          :
+          true
           } 
       })
       return data;
   }
 
-  module.exports = {beginn, timedata}
+  function info(data) {
+    if(data === false)
+    {
+    return "\nHinweis: Diese Stunde fällt aus!(infos auf Untis)"
+    }
+  }
+
+  module.exports = {beginn, timedata, info}
