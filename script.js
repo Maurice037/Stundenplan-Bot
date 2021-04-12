@@ -49,4 +49,14 @@ function beginn(time) {
     }
   }
 
-  module.exports = {beginn, timedata, info}
+  function getTime(now) {
+    let hour = now.getHours();
+    let min = now.getMinutes();
+    if(min.toString().length === 1)
+    {
+    min = "0"+min;    
+    }
+    return parseInt(hour + "" + min);
+    }
+
+  module.exports = {beginn, timedata, info, getTime}

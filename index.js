@@ -2,7 +2,7 @@ const cfg = require("./config.js");
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const WebUntis = require("webuntis");
-const {beginn, timedata, info}  = require("./script.js");
+const {beginn, timedata, info, getTime}  = require("./script.js");
 let sended = false;
 
 client.on("ready", () => {
@@ -30,7 +30,7 @@ untis
         //check lesson 
         setInterval(function () {
             const now = new Date();
-            let time = parseInt(now.getHours() + "" + now.getMinutes());
+            let time = getTime(now)
             //let time = 1005 
             let data = timedata(timetable);
             if (data.some(data => data.start === time) && sended === false) {
@@ -41,7 +41,7 @@ untis
              if(data.some(data => data.end === time) && sended === true ){
                 sended = false
              }
-        }, 30000);//check every 30 seconds 
+        }, 3000);//check every 30 seconds 
     })
     .catch(err => {
         console.error(err);
