@@ -46,6 +46,8 @@ function beginn(time) {
     if(data === false)
     {
     return "\nHinweis: Diese Stunde fällt aus!(infos auf Untis)"
+    }else{
+      return ""
     }
   }
 

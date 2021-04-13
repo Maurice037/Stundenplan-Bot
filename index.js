@@ -38,10 +38,10 @@ untis
                 client.channels.cache.get(cfg.channel).send(`**Unterricht um ${beginn(data[i].start)} Uhr!** \nFach: ${data[i].fach} \nRaum: ${data[i].raum} \nLehrer: ${data[i].lehrer}${info(data[i].status)}`);
                 sended = true
             }
-             if(data.some(data => data.end === time) && sended === true ){
+             if(data.some(data => (data.end-1) === time) && sended === true ){
                 sended = false
              }
-        }, 3000);//check every 30 seconds 
+        }, 30000);//check every 30 seconds 
     })
     .catch(err => {
         console.error(err);
